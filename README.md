@@ -107,11 +107,14 @@ make -j$(nproc)
 ## Next Steps (V1 Roadmap)
 
 ### Phase 1: Core MVP
-- [ ] Complete display pipeline (swapchain, renderpass)
-- [ ] GPU buffer allocation & memory barriers
-- [ ] Compute shader execution + synchronization
-- [ ] Real-time pixelation on test pattern
-- [ ] FPS monitoring
+- [X] Complete display pipeline (swapchain, renderpass)
+- [X] GPU buffer allocation & memory barriers
+- [X] Compute shader execution + synchronization
+- [X] Real-time pixelation on test pattern
+- [X] FPS monitoring
+
+**Status:**  
+Phase 1 is fully completed. The application has a functional Vulkan render + compute pipeline with real-time processing and performance metrics.
 
 ### Phase 2: Real Input
 - [ ] V4L2 webcam integration
