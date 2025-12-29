@@ -245,6 +245,11 @@ will be licensed under the **AGPL-3.0**, unless explicitly stated otherwise
 This software is provided **"as is"**, without warranty of any kind.
 See the AGPL-3.0 license for details.
 
+## Commercial Licensing
+
+If you require a license that does not impose AGPL-3.0 obligations
+(e.g. closed-source or proprietary use), please contact the author.
+
 ## Copyright
 
 Copyright © 2025 Semih Taha Aksoy (aka WlayerX)
