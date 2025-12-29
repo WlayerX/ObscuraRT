@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <vector>
+#include <string>
 
 struct Frame {
     uint32_t width;
@@ -13,36 +14,54 @@ struct Frame {
 };
 
 /**
- * @brief Acquires video frames from webcam or file.
- *
- * Supports:
- * - V4L2 (Linux webcam)
- * - FFmpeg (files, IP cameras)
- *
- * Currently: Mock implementation returning test pattern.
+ * @brief Base class for frame acquisition.
+ * Generates test pattern (gradient).
  */
 class FrameGrabber {
 public:
     explicit FrameGrabber(uint32_t width = 1920, uint32_t height = 1080);
-    ~FrameGrabber();
+    virtual ~FrameGrabber();
     
     // Non-copyable
     FrameGrabber(const FrameGrabber&) = delete;
     FrameGrabber& operator=(const FrameGrabber&) = delete;
     
-    void init(const char* source = nullptr);
-    void cleanup();
-    
-    bool grabFrame(Frame& out_frame);
+    virtual void init(const char* source = nullptr);
+    virtual void cleanup();
+    virtual bool grabFrame(Frame& out_frame);
     
     uint32_t getWidth() const { return width_; }
     uint32_t getHeight() const { return height_; }
     
-private:
+protected:
     uint32_t width_;
     uint32_t height_;
     uint32_t frame_count_ = 0;
+};
+
+/**
+ * @brief V4L2 webcam input via /dev/videoX
+ * Reads frames in YUYV format, converts to RGBA.
+ */
+class WebcamGrabber : public FrameGrabber {
+public:
+    explicit WebcamGrabber(uint32_t width = 1920, uint32_t height = 1080,
+                           const char* device = "/dev/video0");
+    ~WebcamGrabber();
     
-    // Placeholder for V4L2 or FFmpeg handle
-    // For MVP: just generate test pattern
+    // Non-copyable
+    WebcamGrabber(const WebcamGrabber&) = delete;
+    WebcamGrabber& operator=(const WebcamGrabber&) = delete;
+    
+    void init(const char* source = nullptr) override;
+    void cleanup() override;
+    bool grabFrame(Frame& out_frame) override;
+    
+private:
+    int fd_ = -1;  // V4L2 file descriptor
+    std::vector<uint8_t> buffer_;
+    std::string device_;
+    
+    bool initV4L2();
+    void yuyv2rgba(const uint8_t* yuyv, uint8_t* rgba, uint32_t pixels);
 };

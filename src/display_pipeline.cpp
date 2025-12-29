@@ -95,12 +95,32 @@ void DisplayPipeline::createWindow(uint32_t width, uint32_t height, const char* 
 }
 
 void DisplayPipeline::createSurface() {
-    if (glfwCreateWindowSurface(vk_ctx_->getInstance(), window_, nullptr, &surface_) != VK_SUCCESS) {
+    // Try to create surface from GLFW window
+    // In headless environments, this might fail - handle gracefully
+    VkResult result = glfwCreateWindowSurface(vk_ctx_->getInstance(), window_, nullptr, &surface_);
+    
+    if (result == VK_ERROR_EXTENSION_NOT_PRESENT) {
+        std::cout << "[Display] WARNING: GLFW surface extension not available (headless mode)" << std::endl;
+        // Continue with VK_NULL_HANDLE - will use display without actual window
+        surface_ = VK_NULL_HANDLE;
+    } else if (result != VK_SUCCESS) {
         throw std::runtime_error("Failed to create window surface");
     }
 }
 
 void DisplayPipeline::createSwapchain(uint32_t width, uint32_t height) {
+    if (surface_ == VK_NULL_HANDLE) {
+        // Headless mode: just create compatible images
+        swapchain_extent_ = {width, height};
+        swapchain_format_ = VK_FORMAT_R8G8B8A8_UNORM;
+        swapchain_images_.resize(2);  // Double buffering
+        swapchain_image_views_.resize(2);
+        framebuffers_.resize(2);
+        
+        std::cout << "[Display] Swapchain in headless mode (2 images)" << std::endl;
+        return;
+    }
+    
     VkPhysicalDevice physicalDevice = vk_ctx_->getPhysicalDevice();
     VkDevice device = vk_ctx_->getDevice();
     

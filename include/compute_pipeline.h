@@ -40,6 +40,11 @@ public:
     
     VkImage getOutputImage() const { return output_image_; }
     
+    // Memory accessors for main loop
+    VkDeviceMemory getStagingBufferMemory() const { return staging_buffer_memory_; }
+    size_t getStagingBufferSize() const { return width_ * height_ * 4; }
+    VkImage getInputImage() const { return input_image_; }
+    
     // Accessors
     VkDescriptorSet getDescriptorSet(uint32_t frame_index) const;
     
