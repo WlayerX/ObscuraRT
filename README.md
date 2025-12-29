@@ -14,7 +14,7 @@
 
 **ObscuraRT** is a GPU-accelerated, privacy-preserving video anonymization system for real-time edge processing. It uses **Vulkan compute shaders** to anonymize video locally without sending raw frames to the cloud.
 
-[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/yourusername)
+[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/wlayerx)
 
 ## Star History
 
