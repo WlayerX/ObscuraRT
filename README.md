@@ -3,22 +3,28 @@
 ![Graphics](https://img.shields.io/badge/graphics-Vulkan%201.3-red)
 ![Build](https://img.shields.io/badge/build-CMake-success)
 ![Status](https://img.shields.io/badge/status-active%20development-orange)
-
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 ![Commercial](https://img.shields.io/badge/commercial-license%20available-important)
-
 ![GitHub Repo stars](https://img.shields.io/github/stars/WlayerX/ObscuraRT?style=flat)
 ![GitHub issues](https://img.shields.io/github/issues/WlayerX/ObscuraRT)
 
 # ObscuraRT: Real-Time Video Anonymization at the Edge
 
-## Star History
-
-[![Star History](https://api.star-history.com/svg?repos=WlayerX/ObscuraRT&type=Date&theme=dark)](https://star-history.com/#WlayerX/ObscuraRT&Date)
-
 ## Overview
 
-**ObscuraRT** is a GPU-accelerated, privacy-preserving video processing system that anonymizes video frames in real-time using **Vulkan compute shaders**. Designed for edge deployment, it processes video locally without sending raw frames to the cloud.
+**ObscuraRT** is a GPU-accelerated, privacy-preserving video anonymization system for real-time edge processing. It uses **Vulkan compute shaders** to anonymize video locally without sending raw frames to the cloud.
+
+[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/yourusername)
+
+## Star History
+
+<a href="https://www.star-history.com/#WlayerX/ObscuraRT&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=WlayerX/ObscuraRT&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=WlayerX/ObscuraRT&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=WlayerX/ObscuraRT&type=date&legend=top-left" />
+ </picture>
+</a>
 
 ### Key Architecture
 
