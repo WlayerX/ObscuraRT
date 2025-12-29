@@ -1,3 +1,9 @@
+// ObscuraRT - Real-Time Video Anonymization
+// Copyright (C) 2025 Semih Taha Aksoy (WlayerX)
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License v3.0.
+
 #include "vulkan_context.h"
 #include <iostream>
 #include <vector>

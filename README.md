@@ -1,3 +1,5 @@
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+
 # ObscuraRT: Real-Time Video Anonymization at the Edge
 
 ## Overview
@@ -211,7 +213,19 @@ All components emit `[ComponentName]` prefixed logs to stdout.
 
 ## License
 
-MIT (placeholder)
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
+
+You are free to use, modify, and distribute this software, including for **commercial purposes**,  
+**provided that** any modified version or service using this software is also licensed under AGPL-3.0
+and the **complete corresponding source code is made available**.
+
+---
+
+## Network Use Disclosure (AGPL Notice)
+
+If you run this software as a **network service** (e.g. SaaS, web app, API, hosted service),
+you are required to provide the **complete source code** of your modified version
+to all users interacting with it over the network, as required by the AGPL-3.0.
 
 ---
 
@@ -220,3 +234,20 @@ MIT (placeholder)
 - [Vulkan Specification](https://www.khronos.org/vulkan/)
 - [GLFW](https://www.glfw.org/)
 - [OpenCV](https://opencv.org/)
+
+## Contributing
+
+By contributing to this project, you agree that your contributions
+will be licensed under the **AGPL-3.0**, unless explicitly stated otherwise
+
+## Disclaimer
+
+This software is provided **"as is"**, without warranty of any kind.
+See the AGPL-3.0 license for details.
+
+## Copyright
+
+Copyright © 2025 Semih Taha Aksoy (aka WlayerX)
+
+Original authorship and copyright notices **must be preserved**
+in all copies and derived works, as required by the license.
