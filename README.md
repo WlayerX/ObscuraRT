@@ -1,4 +1,14 @@
+![Platform](https://img.shields.io/badge/platform-linux%20%7C%20windows-lightgrey)
+![Language](https://img.shields.io/badge/language-C%2B%2B20-blue)
+![Graphics](https://img.shields.io/badge/graphics-Vulkan%201.3-red)
+![Build](https://img.shields.io/badge/build-CMake-success)
+![Status](https://img.shields.io/badge/status-active%20development-orange)
+
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+![Commercial](https://img.shields.io/badge/commercial-license%20available-important)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/WlayerX/ObscuraRT?style=flat)
+![GitHub issues](https://img.shields.io/github/issues/WlayerX/ObscuraRT)
 
 # ObscuraRT: Real-Time Video Anonymization at the Edge
 
